@@ -23,7 +23,6 @@ router.get("/:id", async (req, res) => {
   // be sure to include its associated Category and Tag data
   try {
     const productData = await Product.findByPk(req.params.id, {
-      // Add Book as a second model to JOIN with
       include: [{ model: Category }, { model: Tag }],
     });
 
